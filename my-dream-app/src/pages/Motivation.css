@@ -1,0 +1,161 @@
+/* Container for the whole page */
+.motivation-page {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* --- Desktop Layout (2 Columns) --- */
+.motivation-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* --- The Left Sidebar --- */
+.layout-sidebar {
+    /* Glassy background */
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 80px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* Sizing and Positioning */
+    flex-basis: 380px;
+    /* Set a fixed width */
+    flex-shrink: 0;
+    position: sticky;
+    /* Make it stick to the top on scroll */
+    top: 2rem;
+}
+
+.layout-sidebar h2 {
+    text-align: left;
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.layout-sidebar p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* --- The Right Side (Post Feed) --- */
+.layout-main-content {
+    flex-grow: 1;
+    /* Take up the rest of the space */
+    min-width: 0;
+    /* Prevents flexbox overflow */
+}
+
+.layout-main-content h2 {
+    padding: 0 0.5rem;
+    color: #2c3e50;
+    text-align: center;
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* --- The New Post Form --- */
+.new-post-form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.new-post-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    background-color: #fcfcfc;
+}
+
+.new-post-form button {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #1abc9c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.new-post-form button:hover {
+    background-color: #16a085;
+}
+
+.new-post-form button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* --- Disabled File Input --- */
+.file-upload-label-disabled {
+    display: block;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: not-allowed;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.new-post-form input[type="file"] {
+    display: none;
+}
+
+.post-list {
+    margin-top: 1rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .motivation-layout {
+        flex-direction: column;
+        /* Stack columns on top of each other */
+        gap: 2rem;
+    }
+
+    .layout-sidebar {
+        position: static;
+        /* Don't be sticky on mobile */
+        flex-basis: auto;
+        width: 100%;
+        padding: 1.5rem;
+
+        box-sizing: border-box;
+    }
+
+    .layout-main-content {
+        padding: 0;
+    }
+
+    .layout-main-content h2 {
+        padding-left: 0.5rem;
+    }
+
+    .post-list {
+        margin-top: 0;
+    }
+}

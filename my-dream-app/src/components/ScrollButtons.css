@@ -1,0 +1,43 @@
+.scroll-buttons-container {
+    position: fixed;
+    /* This makes it stay in one place */
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    /* Ensure it's on top of other content */
+
+    /* Use flexbox to stack the buttons */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.scroll-btn {
+    width: 50px;
+    height: 50px;
+
+    /* Make them circles */
+    border-radius: 50%;
+    border: none;
+
+    background-color: #2c3e50;
+    /* Same as your navbar */
+    color: white;
+
+    font-size: 1.5rem;
+    /* Make the arrows bigger */
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    /* Add a nice shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-btn:hover {
+    background-color: #1abc9c;
+    /* Theme color on hover */
+    transform: scale(1.1);
+    /* Pop out on hover */
+}

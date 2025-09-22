@@ -1,0 +1,306 @@
+/* --- Main Clock Page Wrapper --- */
+.clock-container {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    /* Keeps the tabs contained */
+}
+
+/* --- Tab Navigation --- */
+.clock-tabs {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.clock-tabs button {
+    flex: 1;
+    /* Each tab takes equal width */
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clock-tabs button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.clock-tabs button.active {
+    color: #1abc9c;
+    border-bottom: 3px solid #1abc9c;
+}
+
+/* --- Tab Content --- */
+.clock-content {
+    padding: 2rem;
+}
+
+.feature-container {
+    text-align: center;
+}
+
+.feature-container h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Timer --- */
+.timer-display {
+    font-size: 5rem;
+    font-weight: 300;
+    font-family: 'Roboto Mono', monospace;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.timer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* --- NEW: Custom Timer Inputs --- */
+.timer-custom-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fcfcfc;
+    width: 80px;
+    /* Give a fixed width */
+}
+
+.timer-presets {
+    margin-top: 1.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.timer-presets p {
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+    color: #555;
+}
+
+/* --- Stopwatch --- */
+.stopwatch-display {
+    font-size: 5rem;
+    font-weight: 300;
+    font-family: 'Roboto Mono', monospace;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.stopwatch-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+
+/* --- Digital Clock (Now Centered) --- */
+.digital-clock-container {
+    display: flex;
+    /* Use flex to center align */
+    flex-direction: column;
+    align-items: center;
+}
+
+.digital-clock-display {
+    font-size: 4rem;
+    font-weight: 500;
+    font-family: 'Roboto Mono', monospace;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+    /* Take full width */
+    box-sizing: border-box;
+    /* Include padding in width */
+    text-align: center;
+    /* Explicitly center text */
+}
+
+/* Clock Themes */
+.clock-themes {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.clock-themes p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.digital-clock-container.theme-light .digital-clock-display {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.digital-clock-container.theme-dark .digital-clock-display {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.digital-clock-container.theme-gradient .digital-clock-display {
+    background: linear-gradient(135deg, #1abc9c 0%, #3498db 100%);
+    color: white;
+}
+
+
+/* --- General Button Styles --- */
+.timer-presets button,
+.clock-themes button,
+.stopwatch-controls button,
+.timer-reset {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: #f0f2f5;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.timer-presets button:hover,
+.clock-themes button:hover,
+.stopwatch-controls button:hover,
+.timer-reset:hover {
+    background-color: #e4e6eb;
+}
+
+.timer-start-stop {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.timer-start-stop:hover {
+    background-color: #27ae60;
+}
+
+.clock-page {
+    /* Use flexbox to center its child */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Set a minimum height to take up most of the screen */
+    /* (85vh = 85% of the viewport height) */
+    min-height: 85vh;
+}
+
+.clock-container {
+    max-width: 600px;
+    margin: 0 auto;
+    /* This already centers it horizontally */
+    /* ... (rest of the existing .clock-container styles) ... */
+}
+
+/* --- Add this for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+
+    /* Let the clock sit at the top, not centered */
+    .clock-page {
+        display: block;
+        min-height: auto;
+        padding: 0;
+    }
+
+    .clock-container {
+        /* Remove the 'glassy' box on mobile */
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        padding: 0;
+    }
+
+    .clock-tabs button {
+        font-size: 0.9rem;
+        /* Smaller tab text */
+        padding: 0.75rem 0.5rem;
+    }
+
+    .clock-content {
+        padding: 1.5rem;
+        /* Reduce padding inside the box */
+    }
+
+    /* --- Reduce the giant clock numbers --- */
+    .timer-display,
+    .stopwatch-display {
+        font-size: 3.5rem;
+    }
+
+    .digital-clock-display {
+        font-size: 2.2rem;
+        padding: 1.5rem;
+    }
+
+    .feature-container h2 {
+        font-size: 2rem;
+    }
+
+    /* Stack the custom timer inputs */
+    .timer-custom-inputs {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .form-group input {
+        width: 120px;
+        text-align: center;
+    }
+}

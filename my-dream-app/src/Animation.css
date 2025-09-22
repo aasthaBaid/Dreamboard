@@ -1,0 +1,162 @@
+/* --- NEW: Page Container Style --- */
+.masonry-page {
+    max-width: 1400px;
+    /* Set a max width for the content */
+    margin: 0 auto;
+    /* Center the page */
+    padding: 2rem;
+    /* Add spacing around the edges */
+}
+
+/* --- NEW: Text Box Style --- */
+.hero-content-box {
+    text-align: center;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    /* Space between text and images */
+
+    /* Give the text a nice "glassy" box */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* --- NEW: Text Styles (for the light box) --- */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    /* Dark text */
+    text-shadow: none;
+    /* Remove old shadow */
+    animation: fadeIn 1s ease-out;
+    /* Keep the fade-in */
+}
+
+.hero-quote {
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 1rem auto;
+    color: #34495e;
+    /* Dark text */
+    text-shadow: none;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-author {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #34495e;
+    /* Dark text */
+    text-shadow: none;
+    animation: fadeIn 2s ease-out;
+}
+
+/* --- NEW: Masonry Layout Container --- */
+.masonry-layout {
+    /* This is the magic! */
+    column-count: 3;
+    /* 3 columns (you can change this to 2 or 4) */
+    column-gap: 1.5rem;
+    /* Space between columns */
+}
+
+/* --- NEW: Masonry Item (the image's container) --- */
+.masonry-item {
+    display: inline-block;
+    /* Important for column-count to work */
+    width: 100%;
+    margin-bottom: 1.5rem;
+    /* Space between rows */
+
+    /* Styling for the card */
+    border-radius: 12px;
+    overflow: hidden;
+    /* Keep the image inside the rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --- NEW: Collage Image Style --- */
+.collage-img {
+    width: 100%;
+    /* Make the image fill the column width */
+    height: auto;
+    /* Let the height be natural */
+    display: block;
+    /* Remove any bottom spacing */
+
+    /* We don't need object-fit anymore! */
+}
+
+/* --- (Fade-in animation is unchanged) --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Add this for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+
+    /* Change the grid to a flex column */
+    .hero-section-grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        /* Let the page grow as tall as it needs */
+        padding: 1.5rem;
+    }
+
+    /* The text box is now just a normal block */
+    .hero-content-grid {
+        grid-column: auto;
+        /* Reset grid properties */
+        grid-row: auto;
+        position: static;
+        /* No longer needs grid positioning */
+        order: -1;
+        /* This makes the text appear FIRST */
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+    }
+
+    /* Make the image containers stack */
+    .grid-image-container {
+        grid-column: auto;
+        grid-row: auto;
+        position: static;
+        width: 100%;
+        height: 250px;
+        /* Give them all a consistent height */
+        margin-bottom: 1rem;
+        animation: none;
+        /* Turn off float animation on mobile */
+    }
+
+    /* Make text smaller on mobile */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-quote {
+        font-size: 1.25rem;
+    }
+}

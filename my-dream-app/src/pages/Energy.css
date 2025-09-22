@@ -1,0 +1,195 @@
+/* Main page styling */
+.energy-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Center the page */
+    text-align: center;
+}
+
+/* --- Energy Slider Styles --- */
+.energy-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.slider-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.current-energy-display {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+/* Styling the range input slider */
+.energy-slider {
+    -webkit-appearance: none;
+    /* Hides default slider */
+    appearance: none;
+    width: 60%;
+    height: 15px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 10px;
+}
+
+.energy-slider:hover {
+    opacity: 1;
+    /* Full opacity on hover */
+}
+
+/* Styling the slider "thumb" (the circle) */
+.energy-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #1abc9c;
+    /* Our app's theme color */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.energy-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #1abc9c;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* --- Divider --- */
+.divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    margin: 2rem 0;
+}
+
+/* --- Dynamic Content Styles --- */
+.energy-content h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+/* Grid layout for the cards */
+.content-grid {
+    display: grid;
+    /* Create 2-3 columns, but let them break on small screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Individual card styling */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    /* Use flexbox for vertical centering */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    /* Nice little lift on hover */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for images */
+    object-fit: cover;
+    /* Prevents stretching */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.card-text-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.card-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #34495e;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.card-quote span {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-top: 0.5rem;
+}
+
+.card-thought {
+    font-size: 1.1rem;
+    color: #34495e;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Add this for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+
+    /* Stack the slider and its labels */
+    .energy-slider-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .energy-slider {
+        width: 100%;
+        /* Make slider full width */
+    }
+
+    /* Force the grid to a single column */
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
